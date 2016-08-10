@@ -1,7 +1,7 @@
 {
   "name": "hadithi",
-  "version": "0.0.1",
-  "description": "beautiful console logs, drawn, inked and bordered!",
+  "version": "0.0.2",
+  "description": "When your logs tell a story about who dunnit!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +12,8 @@
     "draw",
     "border",
     "chalk",
-    "color"
+    "color",
+    "story"
   ],
   "author": "Anthony Mugendi <ngurumugz@gmail.com>",
   "license": "MIT",

@@ -1,5 +1,3 @@
-
-
 const columnify = require('columnify');
 const arrify = require('arrify');
 const chalk = require('chalk');
@@ -90,7 +88,7 @@ function log(argsArray){
               ? arg.content.join(', ')
               : columnify( arrify(arg.content), { preserveNewLines: true, columnSplitter: ' | '} )
                     .split(/[\n\r]/)
-                    .join( "\n"+ " ".repeat(i.toString().length+2) + " " );
+                    .join( "\n"+ (hadithiNumbered[i] ? " ".repeat(i.toString().length+2)+ " " : "")  );
 
     }
     else{

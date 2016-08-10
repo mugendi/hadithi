@@ -113,9 +113,12 @@ hadithi.log(
  );
 
 ```
-## columns
+## Columns
 ```test.js``` is a pretty good example to start with. If you run it, you will note that it outputs objects as beautiful columns! Did you?
 
 Well, that's because Hadithi wraps the awesome [columnify](https://www.npmjs.com/package/columnify)
+
+## Styling
+Please note that Hadithi uses [chalk](https://www.npmjs.com/package/chalk) under the hood so all color names and style names must follow Chalk color/style names or will be ignored.
 
 Go on, tell that story!
