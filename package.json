@@ -1,0 +1,24 @@
+{
+  "name": "hadithi",
+  "version": "0.0.1",
+  "description": "beautiful console logs, drawn, inked and bordered!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "console",
+    "log",
+    "draw",
+    "border",
+    "chalk",
+    "color"
+  ],
+  "author": "Anthony Mugendi <ngurumugz@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "arrify": "^1.0.1",
+    "chalk": "^1.1.3",
+    "columnify": "^1.5.4"
+  }
+}
