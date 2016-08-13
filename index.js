@@ -4,6 +4,7 @@ const chalk = require('chalk');
 const util = require('util');
 
 var borderColor = 'yellow';
+var columnOpts = { preserveNewLines: true, columnSplitter: ' | '};
 
 function log(argsArray){
 
@@ -14,6 +15,7 @@ function log(argsArray){
 
   var hadithiNumbered = [];
   var allNumbered = false;
+
 
   //build hadithi objects
   args = args.map( v => {
@@ -84,11 +86,13 @@ function log(argsArray){
     isTitle = (arg.type == 'title');
 
     if(typeof arg.content == 'object'){
-      out = (Array.isArray(arg.content))
-              ? arg.content.join(', ')
-              : columnify( arrify(arg.content), { preserveNewLines: true, columnSplitter: ' | '} )
-                    .split(/[\n\r]/)
-                    .join( "\n"+ (hadithiNumbered[i] ? " ".repeat(i.toString().length+2)+ " " : "")  );
+      if(Array.isArray(arg.content)){
+        out = arg.content.join(', ')
+      }
+      else{
+        out = columnify( arrify(arg.content), columnOpts ).split(/[\n\r]/)
+        .join( "\n"+ (hadithiNumbered[i] ? " ".repeat(i.toString().length+2)+ " " : "")  );
+      }
 
     }
     else{
@@ -237,7 +241,7 @@ function maxLineLength(args, hadithiNumbered ){
     if(typeof arg.content == 'object'){
       if(Array.isArray(arg.content)){   arr = [arg.content.join(', ')];   }
       else{
-        var columns = columnify( arrify(arg.content) );
+        var columns = columnify( arrify(arg.content), columnOpts );
         arr = columns.split(/[\n\r]/);
       }
 
